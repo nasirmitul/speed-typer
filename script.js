@@ -58,6 +58,9 @@ const validate = (key) => {
   if (key === questionText[userText.length - 1]) {
     return true;
   }
+  else{
+    errorCount++;
+  }
   return false;
 };
 
@@ -80,7 +83,7 @@ const gameOver = () => {
   // show result
   resultModal.innerHTML += `
     <h1>Finished!</h1>
-    <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
+    <p>You took: <span class="bold">${parseInt(timeTaken)}</span> seconds</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
@@ -103,7 +106,7 @@ const start = () => {
   // If already started, do not start again
   if (startTime) return;
 
-  let count = 1;
+  let count = 3;
   countdownOverlay.style.display = "flex";
 
   const startCountdown = setInterval(() => {
@@ -114,6 +117,7 @@ const start = () => {
       // -------------- START TYPING ----------------- 
       document.addEventListener("keydown", typeController);
       countdownOverlay.style.display = "none";
+      countdownOverlay.innerHTML = ``;
       display.classList.remove("inactive");
 
       clearInterval(startCountdown);
@@ -135,8 +139,6 @@ displayHistory();
 setInterval(() => {
   const currentTime = new Date().getTime();
   const timeSpent = (currentTime - startTime) / 1000;
-
-  
 
   document.getElementById("show-time").innerHTML = `${startTime ? parseInt(timeSpent) : 0} seconds`;
 }, 1000);
