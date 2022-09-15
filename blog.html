@@ -29,7 +29,24 @@
             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    Answer one
+                    <ul>
+                        <li>
+                            Local storage is the most recent mechanism. It allows for larger amounts of data to be
+                            stored, but the data is not deleted when the browser is closed. Local storage is useful for
+                            storing data that the user will need to access later, such as offline data. <br>
+                            Session storage is similar to cookies, but the data is only stored for the current session.
+                            This means that the data will be deleted when the user closes the browser. Session storage
+                            is useful for storing data that is sensitive, such as login credentials.
+                        </li>
+                        <li>
+                            The main difference is that local storage data does not expire, whereas session storage data
+                            gets cleared when the user closes its browser window.
+                        </li>
+                        <li>
+                            Since local storage is not session-based, all the data must be deleted via javascript or
+                            manually
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -43,7 +60,18 @@
             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    Answer two
+                    In javascript the whole document is global scope and all the other functions and variables are
+                    contained in this global scope.
+
+                    Another is the Local Scope, variables declared inside the functions are considered to be of the
+                    local scope and it is futher divided into function scoped and block scoped.
+
+                    Function Scope: When a variable is declared inside a function, it is only accessible within that
+                    function and cannot be used outside that function.
+
+                    Block Scope: A variable when declared inside the if or switch conditions or inside for or while
+                    loops, are accessible within that particular condition or loop. To be consise the variables declared
+                    inside the curly braces are called as within block scope.
                 </div>
             </div>
         </div>
@@ -57,7 +85,20 @@
             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    Answer three
+                    The Event Loop has one simple job to monitor the Call Stack and the 
+                    Callback Queue or Message Queue. 
+                    
+                    If the Call Stack is empty, it will take the first event from the
+                    Callback queue and will push it to the Call Stack, which effectively runs it. 
+                    
+                    Such an iteration is called a tick in the Event Loop. 
+                    Each event is just a function callback.
+                    
+                    Explanation : 
+                    When any Asynchronous event occur such as setTimeOut or promises, then these task takes some time to complete I/O if they have any. 
+                    If they completed their I/O or don't have any, then they simply put into 
+                    message queue or callback queue. Then event loop will firstly execute the 
+                    call stack tasks and then look for callback or message queue and then execute it.
                 </div>
             </div>
         </div>
@@ -71,7 +112,17 @@
             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                 data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                    Answer Four
+                    There are 8 ways to get Undefined in JavaScript.
+                    <ol>
+                        <li>Variable declared but no value assigned</li>
+                        <li>Function with no return</li>
+                        <li>Parameter that is not passed will be undefined</li>
+                        <li>If return has nothing on the right side will return undefined</li>
+                        <li>Property that doesn't exists on an object will give you undefined</li>
+                        <li>Accessing array elements outside of the index range</li>
+                        <li>Deleting an element from inside an array</li>
+                        <li>Set a value directly to undefined</li>
+                    </ol>
                 </div>
             </div>
         </div>
